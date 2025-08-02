@@ -16,6 +16,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollToProfile }) => {
         "Hello, I'm Ayub Ali.",
         "I'm a Full Stack Developer.",
         "I love Laravel + React.",
+        "I love wordpress theme development.",
         "Let's build something great!",
       ],
       typeSpeed: 50,
@@ -39,19 +40,20 @@ const Hero: React.FC<HeroProps> = ({ onScrollToProfile }) => {
         backgroundRepeat: 'no-repeat',
       }}
     id='profile'>
+
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-indigo-800/70"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         <div className="ml-[10%]">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h4 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-300">
             <span ref={typedElement}></span>
-          </h1>
+          </h4>
           <p className="text-lg md:text-xl mb-6">
             A passionate Full Stack Laravel + React Developer, building modern web applications with clean code and beautiful UI.
           </p>
           <button
             onClick={onScrollToProfile}
-            className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition"
+            className="inline-block bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded shadow-lg hover:bg-yellow-300 transition"
           >
             View Profile
           </button>
@@ -61,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollToProfile }) => {
           <motion.img
             src="/images/ayubxx.jpg"
             alt="Ayub Ali"
-            className="w-64 h-64 object-cover rounded-full border-1 border-blue-700 shadow-lg"
+            className="w-64 h-64 object-cover rounded-full border-4 border-yellow-400 shadow-xl"
             animate={{
               y: [0, -2, 0], // bounce up and down
             }}
