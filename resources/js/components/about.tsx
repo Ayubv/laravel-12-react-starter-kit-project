@@ -15,7 +15,7 @@ const About = () => {
             About Us
           </span>
         </h2>
-
+fdghdfgdfgdfgfd
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           {["Mission", "Vision"].map((title, idx) => (
             <div
