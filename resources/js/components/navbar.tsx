@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CircleDot } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +30,16 @@ const navItems = ['Home', 'About', 'Services', 'Projects', 'Contact'];
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-yellow-300 drop-shadow-lg">
-          Ayub Ali
-        </div>
+ <div className="w-12 h-12  rounded-full flex items-center justify-center shadow-lg">
+      <motion.div
+        initial={{ scale: 0.8, rotate: 0, opacity: 0 }}
+        animate={{ scale: 1, rotate: 360, opacity: 1 }}
+        transition={{ duration: 1.0, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' }}
+      >
+        <CircleDot className="w-8 h-8 text-yellow-500" style={{ color: '#f3c510ff' }}/>
+      </motion.div>
+    </div>
+
 
         {/* Desktop Menu */}
        <nav className="hidden md:flex space-x-6 text-lg">
