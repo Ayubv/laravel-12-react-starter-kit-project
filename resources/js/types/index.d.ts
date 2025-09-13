@@ -41,3 +41,19 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+interface Hero {
+  id: number;
+  title: string;
+  typed_texts: string[];
+  description: string;
+  background_image: string;
+  profile_image: string;
+  button_text: string;
+  button_link: string;
+}
+
+interface HeroFormModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  hero?: Hero;
+}
