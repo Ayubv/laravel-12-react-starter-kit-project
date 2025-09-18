@@ -9,11 +9,29 @@ import Profile, { UserProfile } from "@/components/profile";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "@/components/hero-section";
 
+
+
+interface Hero {
+  id?: number;
+  title?: string;
+  typed_texts?: string[];
+  description?: string;
+  background_image?: string;
+  profile_image?: string;
+  button_text?: string;
+  button_link?: string;
+}
+
+
+
+
+
+
 type Props = {
   section: string;
 };
 
-const Welcome = ({ section }: Props) => {
+const Welcome = ({ hero, section }: { hero: Hero; section?: string }) => {
   useEffect(() => {
     if (section) {
       const el = document.getElementById(section);
@@ -42,16 +60,7 @@ const Welcome = ({ section }: Props) => {
   };
 
   // Dummy hero data (this should come from backend ideally)
-  const heroData = {
-    title: "Welcome to My Portfolio",
-    typed_texts: ["Full Stack Developer", "UI/UX Enthusiast", "Tech Explorer"],
-    description:
-      "I build modern, scalable, and user-friendly applications with a passion for design and clean code.",
-    background_image: "hero-bg.jpg", // place this in /storage/hero-bg.jpg
-    profile_image: "ayubxx.jpg", // place this in /storage/ayubxx.jpg
-    button_text: "View My Work",
-    button_link: "#projects",
-  };
+
 
   return (
     <>
@@ -59,7 +68,7 @@ const Welcome = ({ section }: Props) => {
 
       {/* Hero Section */}
       <section id="hero-section" className="min-h-screen bg-gradient-to-r from-blue-600 to-indigo-700">
-        <HeroSection hero={heroData} onScrollToProfile={openProfileModal} />
+        <HeroSection hero={hero} onScrollToProfile={openProfileModal} />
       </section>
 
       <section id="about" className="min-h-screen">
